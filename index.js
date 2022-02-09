@@ -14,7 +14,7 @@ function login() {
       error("you user name or password is incorect");
     } else {
       divSuccessShow(username);
-      localStorage.username = username;
+      localStorage.setItem = ("user","1234");
     }
   }
 }
