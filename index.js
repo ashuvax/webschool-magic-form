@@ -1,4 +1,4 @@
-if (localStorage.length > 0) divSuccessShow();
+if (localStorage.length > 0) divSuccessShow(localStorage.username);
 else $("#btn-login").click(login);
 
 function login() {
@@ -13,8 +13,8 @@ function login() {
     if (!checkUser(username, password)) {
       error("you user name or password is incorect");
     } else {
-      divSuccessShow();
-      localStorage.setItem(username, password);
+      divSuccessShow(username);
+      localStorage.setItem("username", username);
     }
   }
 }
@@ -26,9 +26,10 @@ function checkUser(username, password) {
   return users[username] === password;
 }
 
-function divSuccessShow() {
+function divSuccessShow(text) {
   $("#div-login").css("display", "none");
   $("#div-success").css("display", "flex");
+  $("#p-username").text("שלום ל " + text);
 }
 
 function error(text) {
