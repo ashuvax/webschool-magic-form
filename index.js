@@ -28,8 +28,8 @@ function checkUser(username, password) {
 
 function divSuccessShow(text) {
   $("#div-login").css("display", "none");
-  $("#div-success").css("display", "flex");
-  $("#p-username").text("שלום ל " + text);
+  $("#div-success").css("display", "block");
+  $("#p-username").text("welcome for " + text);
 }
 
 function error(text) {
